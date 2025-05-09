@@ -1,4 +1,4 @@
-# Run a report
+# VCF Operations Report Runner
 
 Runs a report in VCF Operations and writes the result to a file or standard out. This is useful for exporting 
 data from VCF Operations using the command line or scheduled jobs.
