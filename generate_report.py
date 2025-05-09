@@ -78,7 +78,7 @@ def get_resource_by_name(adapter_kind, resource_kind, name):
 # Parse arguments
 parser = argparse.ArgumentParser(
     prog='getmetric',
-    description='Returns the latest value of a specified metric',
+    description='Runs a report and downloads the result',
 )
 parser.add_argument('-H', '--host', required=True)
 parser.add_argument('-u', '--user', required=True)
@@ -101,7 +101,7 @@ try:
     login(args.host, args.user, args.password, args.authsource)
 except URLError as e:
     if "certificate" in str(e):
-        sys.stderr.write("The server appears to have a self-signed certificate. Override by adding the --unsafe option (not recommended in production)")
+        sys.stderr.write("The server appears to have a self-signed certificate. Override by adding the --unsafe option (not recommended in production)\n")
         sys.exit(1)
     else:
         raise e
